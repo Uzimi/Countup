@@ -1,0 +1,35 @@
+{
+  "name": "portoise",
+  "version": "1.0.0",
+  "description": "Portis's Discord.js Bot",
+  "main": "./server.js",
+  "scripts": {
+    "start": "node -r dotenv/config ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keithno/Portoise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keithno/Portoise/issues"
+  },
+  "homepage": "https://github.com/Keithno/Portoise#readme",
+  "engines": {
+    "node": "16.8.0",
+    "npm": "7.21.0"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "glob": "^7.1.7",
+    "node-fetch": "^3.0.0",
+    "path": "^0.12.7"
+  }
+}
