@@ -43,7 +43,6 @@ module.exports = async (portle) => {
         await portle.guilds.cache
             .get("884380331170484244")
             .commands.set(arrayOfSlashCommands);
-        
     });
 
     const mongooseURI = process.env.URI;
