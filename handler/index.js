@@ -9,6 +9,7 @@ const globPromise = promisify(glob);
  * @param {Client} portle
  */
 module.exports = async (portle) => {
+
     const commandFiles = await globPromise(`${process.cwd()}/commands/**/*.js`);
     commandFiles.map((value) => {
         const file = require(value);
@@ -42,6 +43,7 @@ module.exports = async (portle) => {
         await portle.guilds.cache
             .get("884380331170484244")
             .commands.set(arrayOfSlashCommands);
+        
     });
 
     const mongooseURI = process.env.URI;

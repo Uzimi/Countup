@@ -2,7 +2,7 @@ const { Client, CommandInteraction } = require("discord.js");
 
 module.exports = {
     name: "ping",
-    description: "returns websocket ping",
+    description: "Returns portle's latency",
     type: 'CHAT_INPUT',
     /**
      * @param {Client} _portle
