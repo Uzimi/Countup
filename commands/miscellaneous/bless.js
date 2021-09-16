@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['blessme'],
     /**
      *
-     * @param {Client} portle
+     * @parnam {Client} portle
      * @param {Message} message
      */
     run: (_portle, message) => {

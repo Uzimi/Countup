@@ -1,4 +1,4 @@
-const portle = require("../server");
+const portle = require(`${process.cwd()}/server.js`);
 
 portle.on("messageCreate", async (message) => {
     if (
@@ -9,12 +9,12 @@ portle.on("messageCreate", async (message) => {
         return;
 
     const [cmd, ...args] = message.content
-        .slice(process.env.DEF_PREFIX.length)
+        .slice(portle.config.DEF_PREFIX.length)
         .trim()
         .split(" ");
 
     const command = portle.commands.get(cmd.toLowerCase()) || portle.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
 
-    if (!command) return;
+    if (!command) return message.channel.send('Uh oh! Looks like you are trying to run a non-existing command :/');
     await command.run(portle, message, args);
 });
