@@ -2,7 +2,7 @@ const portle = require("../server");
 
 portle.on("ready", async (interaction) => {
     const guildId = 884380331170484244n;
-
+    portle.user.setActivity('being the best discord bot', { type: 'COMPETING' });
     // This function will log all interactions to the console. Debugging purposes
     const getApp = (guildId) => {
         const app = portle.api.applications(portle.user.id)
