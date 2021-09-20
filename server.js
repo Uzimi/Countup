@@ -1,10 +1,13 @@
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, Intents } = require("discord.js");
 const mongoose = require('mongoose');
 
-const portle = new Client({
-    intents: 32767,
+const count = new Client({
+    intents: [
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES
+    ]
 });
-module.exports = portle;
+module.exports = count;
 
 mongoose.connect(process.env.URI, {
     useNewUrlParser: true,
@@ -14,11 +17,11 @@ mongoose.connect(process.env.URI, {
 const database = mongoose.connection;
 database.on('error', console.error.bind(console, 'Database error occured.'));
 
-portle.database = database;
-portle.commands = new Collection();
-portle.slashCommands = new Collection();
-portle.config = require("./config.json");
+count.database = database;
+count.commands = new Collection();
+count.slashCommands = new Collection();
+count.config = require("./config.json");
 
-require("./handler")(portle);
+require("./handler")(count);
 
-portle.login(process.env.TOKEN);
+count.login(process.env.TOKEN);
